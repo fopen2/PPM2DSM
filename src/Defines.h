@@ -6,7 +6,10 @@
 #undef DEBUG
 
 #define CHANNELNUMBER 7
+//LED is controlled with hardware PWM
+//do NOT change the LEDPIN without checking LEDController.cpp and setting up the hardware PWM generation for the new pin
 #define LEDPIN 6
+
 //spektrum: thro,aile,elev,rudd,gear,aux1
 //futaba:   aile,elev,thro,rudd,gear,aux1
 //mapping from futaba to spektrum

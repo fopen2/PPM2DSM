@@ -84,7 +84,7 @@
 		}
     //DSM Header Byte 00
     t->beginFrame();
-		byte header0 =8| 16 | (isBinding ? 128 : 0);//disbable france mode, activate DSMX (shouldnt do anything with my X1TXN C1) and maybe binding. Binding is on when the values are positive. To savely ignore the 0 1550 is chosen instead of 1513
+		byte header0 =8| 16 | (isBinding ? 128 : 0);//disbable france mode, activate DSMX (shouldnt do anything with my X1TXN C1) and maybe binding. Binding is on when the values are positive. To safely ignore the 0 1550 is chosen instead of 1513
 		t->write(&header0, 1);
 
 		//DSM Header Byte 01; currently just the modelnumber
