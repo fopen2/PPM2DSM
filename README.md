@@ -45,6 +45,7 @@ This program was developed using [PlatformIO](https://platformio.org/) IDE. The 
 
 Building with the Arduino IDE should also be possible, but this was not tested.
 
+Alternatively, check out the [releases section for pre-built binaries.](../../releases/)
 
 Usage
 -----
