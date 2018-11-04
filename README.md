@@ -38,7 +38,7 @@ Pin assignment
 Pin numbers can be changed in [Defines.h](src/Defines.h)
 
 
-Example schmematic
+Example schematic
 ------------------
 
 ![schematic](./hardware/ppm2dsm_kicad.svg)
