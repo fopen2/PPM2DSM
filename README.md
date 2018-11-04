@@ -38,6 +38,13 @@ Pin assignment
 Pin numbers can be changed in [Defines.h](src/Defines.h)
 
 
+Example schmematic
+------------------
+
+![schematic](./hardware/ppm2dsm_kicad.svg)
+
+Of course, this schematic is by no means the only working one. Different voltage converter or switch setups are certainly possible. Even a different microcontroller should be possible. E.g. a 16MHz 5v pro mini should work just fine, as long as the firmware is built for 16MHz and the voltage of the serial connection is somehow stepped down to prevent damage to the RF module.
+
 Building
 --------
 
@@ -94,3 +101,4 @@ http://www.demoboard.de/projekte/ppm2dsm/
 
 https://www.rc-heli.de/board/showthread.php?t=189853
 
+http://www.hacksmods.com/2011/12/spektrum-dsm2-module-from-hp6dsm/
