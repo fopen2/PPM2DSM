@@ -7,7 +7,7 @@
 const byte Changer::mapping[CHANNELMAPPINGSIZE] = { CHANNELMAPPING };
 
 Changer::Changer(){
-
+	early_transmissions_unlocked=false;
 }
 
 void Changer::writeChannel(uint16_t data, byte channel){
@@ -37,7 +37,7 @@ bool Changer::is_frame_tx_early(){
 }
 
 void Changer::frameComplete(){
-	
+	early_transmissions_unlocked=true;
 }
 
 const char* const Changer::isFrameFailed(){
@@ -51,7 +51,7 @@ const char* const Changer::isFrameFailed(){
 }
 
 bool Changer::isFrameReadyToTX(){
-	if (frameCompleteVar && (frameready<micros())){
+	if (early_transmissions_unlocked && frameCompleteVar && (frameready<micros())){
 		frameCompleteVar = false;
 		return true;
 	}

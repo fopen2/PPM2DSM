@@ -22,6 +22,7 @@ private:
 	const char* frameFailedVar = NULL;
 	bool frameCompleteVar = false;
 	bool frame_early_transmission = true;
+	bool early_transmissions_unlocked = false;
 	unsigned long frameready = 0;
 
  public:
