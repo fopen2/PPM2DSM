@@ -18,8 +18,11 @@
 			t->writeError(signalFrameFailed);
 			l->setError();
 		}
-		else if (c->isFrameComplete()){
+		else if (c->isFrameReadyToTX()){
 			l->clearErrors();
+			if(c->is_frame_tx_early()){
+				l->setError();
+			}
 			encodeFrame();
 		}
 	}

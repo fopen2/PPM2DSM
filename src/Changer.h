@@ -21,6 +21,8 @@ private:
 
 	const char* frameFailedVar = NULL;
 	bool frameCompleteVar = false;
+	bool frame_early_transmission = true;
+	unsigned long frameready = 0;
 
  public:
 	 Changer();
@@ -28,8 +30,11 @@ private:
 	 uint16_t* readChannels();
 	 void frameFailed(const char* const error);
 	 void frameComplete();
+	 void frameStart();
 	 const char* const isFrameFailed();
-	 bool isFrameComplete();
+	 bool isFrameReadyToTX();
+	 void frame_no_longer_early();
+	 bool is_frame_tx_early();
 
 };
 

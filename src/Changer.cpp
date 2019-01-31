@@ -22,8 +22,22 @@ void Changer::frameFailed(const char* const error){
 	frameFailedVar = error;
 }
 
+void Changer::frameStart(){
+	frameready = micros()+TX_DELAY_MICROS;
+	frameCompleteVar=true;
+	frame_early_transmission=true;
+}
+
+void Changer::frame_no_longer_early(){
+	frame_early_transmission=false;
+}
+
+bool Changer::is_frame_tx_early(){
+	return frame_early_transmission;
+}
+
 void Changer::frameComplete(){
-	frameCompleteVar = true;
+	
 }
 
 const char* const Changer::isFrameFailed(){
@@ -36,8 +50,8 @@ const char* const Changer::isFrameFailed(){
 	}
 }
 
-bool Changer::isFrameComplete(){
-	if (frameCompleteVar){
+bool Changer::isFrameReadyToTX(){
+	if (frameCompleteVar && (frameready<micros())){
 		frameCompleteVar = false;
 		return true;
 	}

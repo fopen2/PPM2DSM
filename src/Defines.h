@@ -6,6 +6,9 @@
 #undef DEBUG
 
 #define CHANNELNUMBER 7
+#define TX_DELAY_MICROS 8500
+#define EARLY_TX_WARNING_THRESHOLD 4
+
 //LED is controlled with hardware PWM
 //do NOT change the LEDPIN without checking LEDController.cpp and setting up the hardware PWM generation for the new pin
 #define LEDPIN 6

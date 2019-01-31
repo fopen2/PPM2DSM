@@ -57,6 +57,7 @@ void Reader::captureInterrupt(){
 		if (current < CHANNELNUMBER)
 			c->frameFailed(too_few_channels);
 		current = 0;
+		c->frameStart();
 	}
 	else{
 		if (current < CHANNELNUMBER) {         // check if its a valid channel pulse and save it
@@ -66,6 +67,9 @@ void Reader::captureInterrupt(){
 				c->frameFailed(invalid_pulse);
 				//wait for sync pulse
 				current = CHANNELNUMBER + 2;
+			}
+			if (current==EARLY_TX_WARNING_THRESHOLD){
+				c->frame_no_longer_early();
 			}
       if (current==CHANNELNUMBER){
         c->frameComplete();
