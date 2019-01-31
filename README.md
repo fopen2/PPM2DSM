@@ -102,3 +102,5 @@ http://www.demoboard.de/projekte/ppm2dsm/
 https://www.rc-heli.de/board/showthread.php?t=189853
 
 http://www.hacksmods.com/2011/12/spektrum-dsm2-module-from-hp6dsm/
+
+https://rc-heli-fan.org/sender-f32/topic88811.html
